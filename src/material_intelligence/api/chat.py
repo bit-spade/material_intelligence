@@ -14,5 +14,7 @@ def llm_response(material, api_key):
 ])
     chain = prompt | structured_llm
     assessment = chain.invoke({"material": material})
-
-    return assessment.green_index, assessment.green_level
+    if assessment.incorrect_input:
+        return assessment.suggestion_to_improve_input
+    else:
+        return assessment.green_index, assessment.green_level
