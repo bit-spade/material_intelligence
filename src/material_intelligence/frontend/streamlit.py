@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import streamlit as st
 import textwrap
 
-from src.material_intelligence.api.chat import llm_response
+from material_intelligence.api.chat import llm_response
 
 
 load_dotenv()
@@ -137,17 +137,22 @@ for message in st.session_state.messages:
 # Accept user input via the chat input box
 if prompt := st.chat_input("Type your message here..."):
     # Build context if files were uploaded
-    attached_files = uploaded_files if uploaded_files else None
+    file_info = ""
+    if uploaded_files:
+        file_names = ", ".join([f.name for f in uploaded_files])
+        file_info = f"\n\n*(Attached files: {file_names})*"
+
+    full_user_message = prompt + file_info
 
     # Display user message in chat message container
     with st.chat_message("user"):
-        st.markdown(prompt)
+        st.markdown(full_user_message)
 
     # Add user message to history
-    st.session_state.messages.append({"role": "user", "content": prompt})
+    st.session_state.messages.append({"role": "user", "content": full_user_message})
 
     # Call LLM assessment
-    green_index, green_level, incorrect_input, suggestion = llm_response(user_prompt=prompt, docs=attached_files, api_key=os.getenv("GEMINI_API_KEY"))
+    green_index, green_level, incorrect_input, suggestion = llm_response(prompt, os.getenv("GEMINI_API_KEY"))
 
     if incorrect_input:
         assistant_msg = f"{suggestion}"
