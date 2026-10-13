@@ -1,75 +1,34 @@
-import docx2txt
-from langchain_core.prompts import ChatPromptTemplate
+import json
+import os
+
+from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
-from material_intelligence.api.schemas.ResponseSchema import ResponseSchema
-from pypdf import PdfReader
+from material_intelligence.api.schemas.ResponseSchema import AnswersSchema
+from material_intelligence.api.utils import attach, load_questionnaire
+from material_intelligence.config import SYSTEM_PROMPT
 
 
-def extract_text_from_streamlit_file(uploaded_file):
-    filename = uploaded_file.name.lower()
-
-    if filename.endswith(".txt"):
-        return uploaded_file.read().decode("utf-8")
-
-    elif filename.endswith(".pdf"):
-        pdf_reader = PdfReader(uploaded_file)
-        text = ""
-        for page in pdf_reader.pages:
-            page_text = page.extract_text()
-            if page_text:
-                text += page_text + "\n"
-        return text
-
-    elif filename.endswith(".docx"):
-        return docx2txt.process(uploaded_file)
-
-    else:
-        raise ValueError(
-            f"Incorrect file format: {uploaded_file.name}. Supported formats: TXT, PDF, DOCX."
-        )
-
-
-def llm_response(user_prompt, docs, api_key):
+def ask_llm(category, files, extra_notes, api_key=None):
+    api_key = api_key or os.getenv("GEMINI_API_KEY")
     llm = ChatGoogleGenerativeAI(
-        model="gemini-3.1-flash-lite", api_key=api_key, temperature=0.1
-    )
-    structured_llm = llm.with_structured_output(ResponseSchema)
-
-    prompt_template = ChatPromptTemplate.from_messages(
-        [
-            (
-                "system",
-                "You are an expert in material intelligence. Your task is to assess materials.",
+        model="gemini-3.1-flash-lite", api_key=api_key, temperature=0
+    ).with_structured_output(AnswersSchema)
+    questionnaire = load_questionnaire(category)
+    files = files or []
+    content = [
+        {
+            "type": "text",
+            "text": (
+                f"QUESTIONNAIRE\n{json.dumps(questionnaire, ensure_ascii=False)}\n\n"
+                f"ADDITIONAL NOTES FROM THE USER (may be empty)\n{extra_notes or 'none'}\n\n"
+                "SOURCE MATERIAL: the attached documents. Answer every question."
             ),
-            (
-                "human",
-                "{user_prompt}\n\nUse the following context to assess the material:\n\n{context}",
-            ),
-        ]
-    )
+        },
+        *[attach(f) for f in files],
+    ]
 
-    chain = prompt_template | structured_llm
+    answers = llm.invoke([SystemMessage(SYSTEM_PROMPT), HumanMessage(content=content)]).answers
+    if len(answers) != len(questionnaire["questions"]):
+        raise ValueError(f"Expected {len(questionnaire['questions'])} answers, got {len(answers)}")
+    return answers
 
-    if not isinstance(docs, list):
-        docs = [docs]
-
-    content_list = []
-    for doc in docs:
-        if hasattr(doc, "page_content"):
-            content_list.append(doc.page_content)
-        else:
-            extracted_text = extract_text_from_streamlit_file(doc)
-            content_list.append(extracted_text)
-
-    context_text = "\n\n".join(content_list)
-
-    assessment = chain.invoke(
-        {"user_prompt": user_prompt, "context": context_text}
-    )
-
-    return (
-        assessment.green_index,
-        assessment.green_level,
-        assessment.incorrect_input,
-        assessment.suggestion_to_improve_input,
-    )
