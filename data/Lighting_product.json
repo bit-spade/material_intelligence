@@ -1,0 +1,104 @@
+{
+  "category": "lighting",
+  "description": "Lighting luminaires - ECO-SCORE questionnaire",
+  "version": "1.0",
+  "answer_options": [
+    "yes",
+    "no",
+    "unknown",
+    "na"
+  ],
+  "questions": [
+    {
+      "id": "1.1.1",
+      "subcategory": "Sourcing and raw materials",
+      "text": "Does the manufacturer publish the full composition of the product?",
+      "hint": "Look for a complete material list of the luminaire, including housing, diffuser and electronics.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.1.2",
+      "subcategory": "Sourcing and raw materials",
+      "text": "Are the materials used to produce the luminaire from responsible sources or recycling, and do they have a low environmental impact?",
+      "hint": "Look for recycled-content figures, certified wood, recycled aluminium or similar statements.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.1.3",
+      "subcategory": "Sourcing and raw materials",
+      "text": "Is the luminaire made of materials with very high corrosion resistance, including resistance to acids and toxic gases, which increases durability and limits frequent replacement?",
+      "hint": "Look for corrosion-resistance claims, material grades (e.g. stainless steel, marine-grade aluminium) or relevant tests.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.2.1",
+      "subcategory": "Transport and CO2 emissions",
+      "text": "Was the product manufactured in the same region of the world where it is sold (local/regional production)?",
+      "hint": "Compare the country of manufacture with the market of the sale page.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.2.2",
+      "subcategory": "Transport and CO2 emissions",
+      "text": "Does the manufacturer publish carbon footprint data (Carbon Footprint)?",
+      "hint": "Look for a stated CO2e value, an EPD or an LCA summary.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.2.3",
+      "subcategory": "Transport and CO2 emissions",
+      "text": "Is the luminaire designed to take up little volume during transport, which reduces the carbon footprint?",
+      "hint": "Look for compact or flat-pack design, or packaging dimensions that suggest it.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.3.1",
+      "subcategory": "Production",
+      "text": "Is the luminaire produced using recycled materials?",
+      "hint": "Look for recycled-content statements for the luminaire's materials.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.3.2",
+      "subcategory": "Production",
+      "text": "Does the manufacturer provide information on energy use or emissions in the production process?",
+      "hint": "Look for production energy or emissions data, or an environmental declaration.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.4.1",
+      "subcategory": "Finishing / impregnation",
+      "text": "Are the luminaire and light source designed so that they do not require additional chemical impregnation or harmful coatings (e.g. fire-retardant, anti-corrosion) to ensure safety and durability?",
+      "hint": "Answer 'yes' if no harmful extra coatings are needed or used. Answer 'no' if such coatings are stated.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.5.1",
+      "subcategory": "End of life",
+      "text": "Is the product marked with the WEEE symbol, indicating the need for separate collection of electrical waste?",
+      "hint": "Look for the crossed-out wheelie bin symbol or a WEEE mention in the product documentation.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.5.2",
+      "subcategory": "End of life",
+      "text": "Does the luminaire contain elements that can be easily separated for recycling (e.g. aluminium, glass)?",
+      "hint": "Look for design-for-disassembly statements or a materials list showing separable recyclable parts.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.5.3",
+      "subcategory": "End of life",
+      "text": "Is the product free from substances particularly harmful to the environment (in accordance with RoHS)?",
+      "hint": "Look for a RoHS compliance statement or CE declaration that covers it.",
+      "applicability": "always"
+    },
+    {
+      "id": "2.1.1",
+      "subcategory": "Durability",
+      "text": "Does the luminaire have impact resistance of 5 J energy, which increases its durability and limits the need for frequent replacement?",
+      "hint": "Answer 'yes' for IK08 or higher (5 J). A lower IK rating is 'no'. No rating is 'unknown'.",
+      "applicability": "always"
+    }
+  ]
+}

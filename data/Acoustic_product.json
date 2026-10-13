@@ -1,0 +1,132 @@
+{
+  "category": "acoustic",
+  "description": "Acoustic products - ECO-SCORE questionnaire",
+  "version": "1.0",
+  "answer_options": [
+    "yes",
+    "no",
+    "unknown",
+    "na"
+  ],
+  "questions": [
+    {
+      "id": "1.1.1",
+      "subcategory": "Sourcing and raw materials",
+      "text": "Does the manufacturer publish the full composition of the product?",
+      "hint": "Look for a complete material list, including binders and surface layers.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.1.2",
+      "subcategory": "Sourcing and raw materials",
+      "text": "Does the manufacturer give the full composition of the acoustic material, including fibre type, binders, finishing layers and chemical additives used in panels, linings or acoustic systems?",
+      "hint": "Needs more detail than 1.1.1: fibres, binders, finishing layers and additives.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.2.1",
+      "subcategory": "Transport and CO2 emissions",
+      "text": "Was the product manufactured in the same region of the world where it is sold (local/regional production)?",
+      "hint": "Compare the country of manufacture with the market of the sale page. Answer 'na' only if local production is not possible for this product type.",
+      "applicability": "if possible for this product type"
+    },
+    {
+      "id": "1.2.2",
+      "subcategory": "Transport and CO2 emissions",
+      "text": "Does the manufacturer publish carbon footprint data (Carbon Footprint)?",
+      "hint": "Look for a stated CO2e value, an EPD or an LCA summary.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.3.1",
+      "subcategory": "Production",
+      "text": "Does the manufacturer provide an ISO 14001 environmental management certificate?",
+      "hint": "Look for an ISO 14001 mention or certificate.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.3.2",
+      "subcategory": "Production",
+      "text": "Does the manufacturer declare that the acoustic material does not cause dusting or release microparticles or other pollutants during everyday use indoors?",
+      "hint": "Look for statements about dust, fibre or microparticle release, or emission test results (e.g. indoor air quality labels).",
+      "applicability": "always"
+    },
+    {
+      "id": "1.3.3",
+      "subcategory": "Production",
+      "text": "Does the manufacturer's website give information about water or energy savings in the production process?",
+      "hint": "Look for concrete statements or figures about reduced water or energy use.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.3.4",
+      "subcategory": "Production",
+      "text": "Does the manufacturer state that it holds, or works with suppliers of materials that hold, a European ecolabel or an OEKO-TEX certificate?",
+      "hint": "Look for OEKO-TEX, EU Ecolabel or equivalent European environmental labels.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.4.1",
+      "subcategory": "Finishing / impregnation",
+      "text": "Are the glues, impregnations, paints or finishing coatings used in the acoustic material free from formaldehyde, PFAS, PVC and other substances considered harmful to human health?",
+      "hint": "Look for explicit statements of being free from these substances, or emission class labels. Silence is 'unknown'.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.4.2",
+      "subcategory": "Flexibility of use",
+      "text": "Can the acoustic material be easily adapted to different types of interiors and changing user needs without losing its acoustic and aesthetic properties?",
+      "hint": "Look for reusability, relocation or reconfiguration statements, or modular/format options.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.5.1",
+      "subcategory": "End of life",
+      "text": "Is the material a mono-material (100% one material), enabling full mechanical recycling?",
+      "hint": "Check the composition: a single material type. Composite panels with several layers are 'no'.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.5.2",
+      "subcategory": "End of life",
+      "text": "Does the manufacturer provide information about the recyclability of the product?",
+      "hint": "Look for recycling instructions or recyclability statements.",
+      "applicability": "always"
+    },
+    {
+      "id": "1.5.3",
+      "subcategory": "End of life",
+      "text": "Does the manufacturer offer circular-economy solutions, such as take-back of used panels, renovation or reprocessing of the material?",
+      "hint": "Look for take-back programmes, refurbishment or reprocessing offers.",
+      "applicability": "always"
+    },
+    {
+      "id": "2.1.1",
+      "subcategory": "Waste",
+      "text": "Does the manufacturer inform about a packaging policy for orders from an environmental point of view?",
+      "hint": "Look for statements about recyclable, reduced or plastic-free packaging.",
+      "applicability": "always"
+    },
+    {
+      "id": "2.1.2",
+      "subcategory": "Waste",
+      "text": "Was the acoustic material designed for long-term use in interiors with high intensity of use, such as offices, schools or public spaces?",
+      "hint": "Look for intended use in high-traffic or public spaces, or durability/wear classes.",
+      "applicability": "always"
+    },
+    {
+      "id": "2.2.1",
+      "subcategory": "Durability",
+      "text": "Does the acoustic material allow modular interior design, limiting waste during fit-out and future changes of the function of the space?",
+      "hint": "Look for modular systems, replaceable elements or reconfigurable layouts.",
+      "applicability": "always"
+    },
+    {
+      "id": "2.2.2",
+      "subcategory": "Durability",
+      "text": "After the end of use, can the acoustic material be recycled, regenerated or reused in new products?",
+      "hint": "Look for end-of-life statements about recycling, regeneration or reuse.",
+      "applicability": "always"
+    }
+  ]
+}
