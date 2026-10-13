@@ -42,4 +42,5 @@ RULES
 8. The list length must equal the number of questions in the questionnaire.
    Count the questions before you answer. Never skip, add or reorder elements."""
 
-QUESTIONNAIRE_DIR = Path(__file__).parent / "data" / "questionnaires"
+_ROOT_DATA = Path(__file__).resolve().parents[2] / "data"
+QUESTIONNAIRE_DIR = _ROOT_DATA if _ROOT_DATA.exists() else Path(__file__).parent / "data" / "questionnaires"

@@ -1,17 +1,20 @@
-from unicodedata import category
 import json
+import os
 
+from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 from material_intelligence.api.schemas.ResponseSchema import AnswersSchema
-from material_intelligence.api.utils import load_questionnaire, attach
-from material_intelligence.config import SYSTEM_PROMPT 
-from langchain_core.messages import HumanMessage, SystemMessage
+from material_intelligence.api.utils import attach, load_questionnaire
+from material_intelligence.config import SYSTEM_PROMPT
 
-def ask_llm(category, files, extra_notes, api_key):
+
+def ask_llm(category, files, extra_notes, api_key=None):
+    api_key = api_key or os.getenv("GEMINI_API_KEY")
     llm = ChatGoogleGenerativeAI(
         model="gemini-3.1-flash-lite", api_key=api_key, temperature=0
     ).with_structured_output(AnswersSchema)
     questionnaire = load_questionnaire(category)
+    files = files or []
     content = [
         {
             "type": "text",
