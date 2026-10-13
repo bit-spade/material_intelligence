@@ -68,7 +68,7 @@ product_lighting = ProductConfig(
         Criterion(1, 40),
         Criterion(2, 40),
         Criterion(3, 30),
-        Criterion(4, 20),
+        Criterion(4, 60),
         Criterion(5, 60),
         Criterion(6, 60),
         Criterion(7, 45),
