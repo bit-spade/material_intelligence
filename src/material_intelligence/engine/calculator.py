@@ -4,14 +4,14 @@ from material_intelligence.models.eco_score_points import product_textile, produ
 
 
 def calculate(
-    product_type: Literal["Textile product", "Acoustic product", "Lighting product"],
+    product_type: Literal["Textile_product", "Acoustic_product", "Lighting_product"],
     llm_mask: list[Optional[bool]]
 ):
-    if product_type == "Textile product":
+    if product_type == "Textile_product":
         product = product_textile
-    elif product_type == "Acoustic product":
+    elif product_type == "Acoustic_product":
         product = product_acoustic
-    elif product_type == "Lighting product":
+    elif product_type == "Lighting_product":
         product = product_lighting
     else:
         raise ValueError(f"Unknown product type: {product_type}")

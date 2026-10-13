@@ -19,7 +19,7 @@ class ProductConfig:
 
 
 product_textile = ProductConfig(
-    product_type="Textile product",
+    product_type="Textile_product",
     criteria=[
         Criterion(1, 40),
         Criterion(2, 40),
@@ -40,7 +40,7 @@ product_textile = ProductConfig(
 )
 
 product_acoustic = ProductConfig(
-    product_type="Acoustic product",
+    product_type="Acoustic_product",
     criteria=[
         Criterion(1, 40),
         Criterion(2, 40),
@@ -63,7 +63,7 @@ product_acoustic = ProductConfig(
 )
 
 product_lighting = ProductConfig(
-    product_type="Lighting product",
+    product_type="Lighting_product",
     criteria=[
         Criterion(1, 40),
         Criterion(2, 40),
