@@ -4,6 +4,14 @@
 
 Material Intelligence helps interior designers evaluate, compare, and select more sustainable finishing materials using a questionnaire-based **ECO-SCORE** methodology.
 
+## Live Demo
+
+The current Streamlit version is available online:
+
+**[Open Material Intelligence](https://eco-score-materials.streamlit.app)**
+
+The demo allows users to select a material category, upload product documentation, add notes, and receive an AI-assisted ECO-SCORE assessment.
+
 ## About the Project
 
 Interior design must balance comfort, aesthetics, durability, and environmental responsibility. Materials used in the “soft layer” of interiors can contribute to microplastic pollution, carbon emissions, chemical exposure, resource depletion, and short product lifecycles.
@@ -24,6 +32,8 @@ The application uses product documentation, technical data, and user-provided no
 - Reference benchmarks for selected example products
 - Streamlit web interface
 - Structured scoring logic implemented in Python
+- CSV export of questionnaire results
+- In-session assessment history
 
 ## Supported Material Categories
 
@@ -196,6 +206,26 @@ streamlit run src/material_intelligence/frontend/streamlit.py
 ```
 
 The application opens in a browser and provides an interface for selecting a product category, uploading documentation, entering additional notes, and starting an assessment.
+
+## Streamlit Deployment
+
+The application is deployed with [Streamlit Community Cloud](https://streamlit.io/cloud).
+
+Deployment settings:
+
+```text
+Repository: bit-spade/material_intelligence
+Branch: main
+Main file: src/material_intelligence/frontend/streamlit.py
+```
+
+Add the Gemini API key in the app's **Settings → Secrets**:
+
+```toml
+GEMINI_API_KEY = "your_gemini_api_key_here"
+```
+
+The API key must not be committed to the repository. For local development, store it in a `.env` file, which is excluded by `.gitignore`.
 
 ## Supported Upload Formats
 
