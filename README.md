@@ -1,4 +1,4 @@
-# 🌿 Material Intelligence
+# Material Intelligence
 
 *An AI-assisted multi-criteria environmental assessment tool for greener interiors.*
 
