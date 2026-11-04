@@ -24,7 +24,9 @@ The application uses product documentation, technical data, and user-provided no
 
 ## Features
 
-- Questionnaire-based ECO-SCORE assessment
+- Single-view project workflow from product-list import through final export
+- CSV, TXT, and XLSX product-list import with an editable verification step
+- Questionnaire-based ECO-SCORE assessment for multiple products
 - AI-assisted interpretation of product documentation
 - Support for textile, acoustic, and lighting products
 - Uploading technical documents and supporting materials
@@ -32,8 +34,7 @@ The application uses product documentation, technical data, and user-provided no
 - Reference benchmarks for selected example products
 - Streamlit web interface
 - Structured scoring logic implemented in Python
-- CSV export of questionnaire results
-- In-session assessment history
+- Final product-list and green-score-3000 report exports
 
 ## Supported Material Categories
 
@@ -205,7 +206,13 @@ Using an activated Python environment:
 streamlit run src/material_intelligence/frontend/streamlit.py
 ```
 
-The application opens in a browser and provides an interface for selecting a product category, uploading documentation, entering additional notes, and starting an assessment.
+The application opens in a browser and provides a single guided workflow:
+
+1. Import a CSV, TXT, or XLSX product list. A `category` column can contain Textile, Acoustic, or Lighting for mixed-category projects.
+2. Verify and edit product names, categories, specification links, amounts, and units, then attach optional PDF/DOCX documentation to each product row.
+3. Score the complete product list with the existing ECO-SCORE questionnaire.
+4. Request alternatives for selected products and choose original or substitute rows.
+5. Export the final product list and the green-score-3000 report.
 
 ## Streamlit Deployment
 
