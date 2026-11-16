@@ -21,7 +21,10 @@ def ask_llm(category, files, extra_notes, api_key=None):
             "text": (
                 f"QUESTIONNAIRE\n{json.dumps(questionnaire, ensure_ascii=False)}\n\n"
                 f"ADDITIONAL NOTES FROM THE USER (may be empty)\n{extra_notes or 'none'}\n\n"
-                "SOURCE MATERIAL: the attached documents. Answer every question."
+                "SOURCE MATERIAL: use every supplied source below and in the attachments: "
+                "the product name, specification URL, fetched product-page text, manufacturer "
+                "information, technical documents, certificates and EPDs. Answer every question "
+                "only from these sources."
             ),
         },
         *[attach(f) for f in files],
@@ -31,4 +34,3 @@ def ask_llm(category, files, extra_notes, api_key=None):
     if len(answers) != len(questionnaire["questions"]):
         raise ValueError(f"Expected {len(questionnaire['questions'])} answers, got {len(answers)}")
     return answers
-

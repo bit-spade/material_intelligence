@@ -6,7 +6,7 @@ from datetime import datetime
 import streamlit as st
 
 from material_intelligence.api.chat import ask_llm
-from material_intelligence.api.utils import load_questionnaire
+from material_intelligence.api.utils import fetch_product_link, load_questionnaire
 from material_intelligence.engine.calculator import (
     calculate_score_and_level,
     get_product_config,
@@ -84,7 +84,7 @@ section[data-testid="stSidebar"] * { color: var(--ink); }
   box-shadow: 0 10px 30px rgba(31,77,58,.18); margin-bottom: 22px;
 }
 .mi-hero::after {
-  content: "🌿"; position: absolute; right: 28px; top: -6px; font-size: 150px; opacity: .13; transform: rotate(14deg);
+  content: ""; position: absolute; right: 28px; top: -6px; font-size: 150px; opacity: .13; transform: rotate(14deg);
 }
 .mi-hero h1 { color: #fff !important; font-size: 2.3rem; margin: 0 0 6px 0; padding: 0; }
 .mi-hero p { color: #E6F1E8; font-size: 1.05rem; margin: 0; max-width: 640px; line-height: 1.55; }
@@ -212,6 +212,22 @@ def rows_to_csv(res: dict) -> str:
 def run_assessment(category: str, product: str, notes: str, files: list) -> dict:
     """Run full assessment pipeline for a single product."""
     extra_notes = product if not notes.strip() else f"{product}\n\n{notes.strip()}"
+    link_text, link_error = fetch_product_link(notes.split("Specification link:", 1)[-1].split("\n", 1)[0].strip())
+    if link_text:
+        extra_notes += (
+            "\n\nSOURCE 1 — FETCHED SPECIFICATION PAGE\n"
+            "The following text was fetched from the product URL supplied by the user. "
+            "Use it as product evidence, including linked manufacturer information shown in the page:\n"
+            f"{link_text}"
+        )
+    elif link_error:
+        extra_notes += f"\n\nSOURCE 1 — SPECIFICATION PAGE STATUS:\n{link_error}"
+    if files:
+        extra_notes += (
+            f"\n\nSOURCE 2+ — {len(files)} UPLOADED DOCUMENT(S)\n"
+            "Use the attached PDF/DOCX files as additional evidence. "
+            "Compare them with the fetched page and use all consistent, product-specific facts."
+        )
     answers = ask_llm(category=category, files=files, extra_notes=extra_notes)
 
     score = calculate_score_and_level(category, answers)
