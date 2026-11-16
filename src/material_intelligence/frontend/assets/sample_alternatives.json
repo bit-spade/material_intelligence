@@ -1,0 +1,39 @@
+{
+  "P107": [
+    {
+      "name": "Sigma Daisy pendant lamp with replaceable G9 light source",
+      "url": "https://www.castorama.pl/lampa-wiszaca-sigma-daisy-1-x-g9-srebrna/5905143286654_CAPL.prd",
+      "channel": "retailer",
+      "attributes": {
+        "A01_composition": {
+          "level": 1,
+          "text": "Glass and steel; shares estimated.",
+          "materials": [{"material": "glass", "share": 0.5}, {"material": "steel", "share": 0.5}],
+          "shares_estimated": true
+        },
+        "A03_country": {"level": 1, "iso2": "PL", "text": "Made in Poland."},
+        "A11_repair": {"level": 1, "repairable": true, "text": "Replaceable G9 light source."},
+        "A14_use_energy": {"level": 0, "watts": null, "text": "Light source not included. Maximum 12 W."}
+      }
+    },
+    {
+      "name": "Candellux Barca pendant lamp with replaceable E27 light source",
+      "url": "https://www.castorama.pl/lampa-wiszaca-candellux-lighting-barca-1-x-e27-czarna-smoke/5903034845126_CAPL.prd",
+      "channel": "retailer",
+      "attributes": {
+        "A01_composition": {
+          "level": 1,
+          "text": "Steel, smoked glass and plastic; shares estimated.",
+          "materials": [
+            {"material": "steel", "share": 0.5}, {"material": "glass", "share": 0.4},
+            {"material": "other", "share": 0.1}
+          ],
+          "shares_estimated": true
+        },
+        "A02_mass": {"level": 1, "kg_per_unit": 0.92, "text": "920 g."},
+        "A09_guarantee": {"level": 1, "years": 2, "text": "2-year guarantee."},
+        "A11_repair": {"level": 1, "repairable": true, "text": "Replaceable E27 light source."}
+      }
+    }
+  ]
+}

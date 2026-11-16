@@ -1,0 +1,1019 @@
+{
+ "_status": "PLACEHOLDER reference data for development. Replace before publishing scores: emission factors (ÖKOBAUDAT, ICE), EH2 material scores (from LCA data), recycling and collection rates (Polish waste statistics), service lives (BNB tables), ITUC ratings (globalrightsindex.org), CH1 anchors (reference set of EPDs and estimates per product group) and EH4 anchors (EU Ecolabel criteria).",
+ "_sources_filled": {
+  "countries.epi_ecosystem_vitality": "Yale EPI 2026, Ecosystem Vitality issue category (https://epi.yale.edu); min 21.10, max 68.56 in that table"
+ },
+ "parameters": {
+  "category_weights": {
+   "CH": 0.2,
+   "HH": 0.2,
+   "EH": 0.2,
+   "SE": 0.2,
+   "CE": 0.2
+  },
+  "colour_bands": {
+   "red_max": 33,
+   "orange_max": 66
+  },
+  "cap": {
+   "category_at_or_below": 33,
+   "ecoscore_at_most": 66
+  },
+  "ch1": {
+   "surcharge_estimate": 0.2,
+   "surcharge_default": 0.3,
+   "typical_zone": "eu",
+   "anchor_factors_when_no_reference_set": {
+    "p10": 0.5,
+    "p50": 1.0,
+    "p90": 2.0
+   }
+  },
+  "transport": {
+   "truck_kg_co2e_per_tkm": 0.09,
+   "sea_kg_co2e_per_tkm": 0.012,
+   "unknown_country_zone": "overseas",
+   "zones": {
+    "domestic": {
+     "truck_km": 300,
+     "sea_km": 0
+    },
+    "eu": {
+     "truck_km": 1200,
+     "sea_km": 0
+    },
+    "near": {
+     "truck_km": 2500,
+     "sea_km": 0
+    },
+    "overseas": {
+     "truck_km": 800,
+     "sea_km": 18000
+    }
+   }
+  },
+  "use_phase": {
+   "lighting_hours_per_year": 1000,
+   "grid_kg_co2e_per_kwh": 0.7,
+   "tap_minutes_per_day": 3,
+   "hot_water_share": 0.5,
+   "hot_water_delta_t_k": 35,
+   "heat_kg_co2e_per_kwh": 0.25
+  },
+  "hh1": {
+   "voc_far_below_limit_fraction": 0.5
+  },
+  "missing_data_defaults": {
+   "EH3": 25,
+   "EH4": 40,
+   "SE1": 40
+  },
+  "eh3_normalisation": {
+   "min": 21.1,
+   "max": 68.56
+  },
+  "eh4_anchors": {
+   "l/min": [
+    [
+     4,
+     100
+    ],
+    [
+     6,
+     75
+    ],
+    [
+     9,
+     50
+    ],
+    [
+     15,
+     0
+    ]
+   ],
+   "l/flush": [
+    [
+     3.5,
+     100
+    ],
+    [
+     4.5,
+     75
+    ],
+    [
+     6,
+     50
+    ],
+    [
+     9,
+     0
+    ]
+   ]
+  },
+  "se1_ituc_scores": {
+   "1": 100,
+   "2": 80,
+   "3": 60,
+   "4": 40,
+   "5": 20,
+   "5+": 0
+  },
+  "ce": {
+   "service_life_factor_range": [
+    0.67,
+    1.45
+   ],
+   "statutory_warranty_years": 2,
+   "durability_class_factors": {
+    "below_typical": 0.85,
+    "typical": 1.0,
+    "above_typical": 1.15,
+    "top": 1.3
+   },
+   "repair_collection_bonus": 0.1,
+   "take_back_collection_bonus": 0.2,
+   "recycled_share_when_claim_has_no_share": 0.25
+  }
+ },
+ "risk_flags": {
+  "pfas_stain_repellent": "high",
+  "flame_retardant": "high",
+  "biocide_antimicrobial": "high",
+  "soft_pvc": "high",
+  "chrome_leather": "high",
+  "non_eu_glaze": "high",
+  "moth_proofing": "high",
+  "isothiazolinone_preservative": "typical",
+  "solvent_borne": "typical",
+  "isocyanate": "typical",
+  "lead_in_brass": "typical",
+  "nickel_release": "typical",
+  "lead_crystal_or_glaze": "typical",
+  "latex_compounding": "typical",
+  "pvc_parts": "typical",
+  "lacquer_coating": "typical",
+  "blackout_coating": "typical",
+  "dyes_and_finishes": "typical",
+  "pvc_stabilisers": "typical",
+  "installation_adhesive": "typical"
+ },
+ "materials": {
+  "ceramic": {
+   "ef_kg_co2e_per_kg": 0.8,
+   "eh2_score": 65,
+   "recycled_share_market_avg": 0.05,
+   "eol_collected_share": 0.2,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "sanitary_ceramic": {
+   "ef_kg_co2e_per_kg": 1.6,
+   "eh2_score": 60,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.2,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "glass": {
+   "ef_kg_co2e_per_kg": 1.4,
+   "eh2_score": 60,
+   "recycled_share_market_avg": 0.2,
+   "eol_collected_share": 0.3,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "stone_natural": {
+   "ef_kg_co2e_per_kg": 0.2,
+   "eh2_score": 60,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.3,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "quartz_composite": {
+   "ef_kg_co2e_per_kg": 1.6,
+   "eh2_score": 45,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": true,
+   "risk_flag": null
+  },
+  "cement_mortar": {
+   "ef_kg_co2e_per_kg": 0.6,
+   "eh2_score": 60,
+   "recycled_share_market_avg": 0.05,
+   "eol_collected_share": 0.1,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "mineral_filler": {
+   "ef_kg_co2e_per_kg": 0.05,
+   "eh2_score": 70,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.1,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "steel": {
+   "ef_kg_co2e_per_kg": 2.0,
+   "eh2_score": 50,
+   "recycled_share_market_avg": 0.4,
+   "eol_collected_share": 0.85,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "stainless_steel": {
+   "ef_kg_co2e_per_kg": 4.5,
+   "eh2_score": 45,
+   "recycled_share_market_avg": 0.6,
+   "eol_collected_share": 0.85,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "aluminium": {
+   "ef_kg_co2e_per_kg": 8.0,
+   "eh2_score": 40,
+   "recycled_share_market_avg": 0.35,
+   "eol_collected_share": 0.8,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "brass": {
+   "ef_kg_co2e_per_kg": 3.0,
+   "eh2_score": 35,
+   "recycled_share_market_avg": 0.6,
+   "eol_collected_share": 0.85,
+   "emitting": false,
+   "risk_flag": "lead_in_brass"
+  },
+  "zinc_alloy": {
+   "ef_kg_co2e_per_kg": 3.5,
+   "eh2_score": 40,
+   "recycled_share_market_avg": 0.2,
+   "eol_collected_share": 0.7,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "softwood": {
+   "ef_kg_co2e_per_kg": 0.3,
+   "eh2_score": 75,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.2,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "hardwood_european": {
+   "ef_kg_co2e_per_kg": 0.4,
+   "eh2_score": 70,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.2,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "hardwood_tropical": {
+   "ef_kg_co2e_per_kg": 0.8,
+   "eh2_score": 25,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.2,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "plywood": {
+   "ef_kg_co2e_per_kg": 0.7,
+   "eh2_score": 60,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.1,
+   "emitting": true,
+   "risk_flag": null
+  },
+  "particleboard": {
+   "ef_kg_co2e_per_kg": 0.5,
+   "eh2_score": 65,
+   "recycled_share_market_avg": 0.3,
+   "eol_collected_share": 0.15,
+   "emitting": true,
+   "risk_flag": null
+  },
+  "mdf": {
+   "ef_kg_co2e_per_kg": 0.7,
+   "eh2_score": 60,
+   "recycled_share_market_avg": 0.05,
+   "eol_collected_share": 0.1,
+   "emitting": true,
+   "risk_flag": null
+  },
+  "hdf": {
+   "ef_kg_co2e_per_kg": 0.75,
+   "eh2_score": 60,
+   "recycled_share_market_avg": 0.05,
+   "eol_collected_share": 0.1,
+   "emitting": true,
+   "risk_flag": null
+  },
+  "flaxboard": {
+   "ef_kg_co2e_per_kg": 0.5,
+   "eh2_score": 70,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.1,
+   "emitting": true,
+   "risk_flag": null
+  },
+  "paper_cardboard": {
+   "ef_kg_co2e_per_kg": 1.0,
+   "eh2_score": 60,
+   "recycled_share_market_avg": 0.6,
+   "eol_collected_share": 0.6,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "cork": {
+   "ef_kg_co2e_per_kg": 0.4,
+   "eh2_score": 85,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.1,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "bamboo": {
+   "ef_kg_co2e_per_kg": 1.0,
+   "eh2_score": 60,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": true,
+   "risk_flag": null
+  },
+  "rattan_wicker": {
+   "ef_kg_co2e_per_kg": 0.5,
+   "eh2_score": 60,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "pvc_rigid": {
+   "ef_kg_co2e_per_kg": 2.5,
+   "eh2_score": 30,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.15,
+   "emitting": true,
+   "risk_flag": null
+  },
+  "pvc_soft": {
+   "ef_kg_co2e_per_kg": 3.0,
+   "eh2_score": 20,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": true,
+   "risk_flag": "soft_pvc"
+  },
+  "polypropylene": {
+   "ef_kg_co2e_per_kg": 2.0,
+   "eh2_score": 40,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.1,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "polyethylene": {
+   "ef_kg_co2e_per_kg": 2.0,
+   "eh2_score": 40,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.1,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "abs": {
+   "ef_kg_co2e_per_kg": 3.5,
+   "eh2_score": 35,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.1,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "acrylic_pmma": {
+   "ef_kg_co2e_per_kg": 4.0,
+   "eh2_score": 35,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "polystyrene": {
+   "ef_kg_co2e_per_kg": 3.4,
+   "eh2_score": 30,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "pu_foam": {
+   "ef_kg_co2e_per_kg": 4.5,
+   "eh2_score": 30,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": true,
+   "risk_flag": null
+  },
+  "latex_natural": {
+   "ef_kg_co2e_per_kg": 3.0,
+   "eh2_score": 50,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.02,
+   "emitting": true,
+   "risk_flag": null
+  },
+  "latex_synthetic": {
+   "ef_kg_co2e_per_kg": 3.5,
+   "eh2_score": 30,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.02,
+   "emitting": true,
+   "risk_flag": null
+  },
+  "laminate_hpl": {
+   "ef_kg_co2e_per_kg": 1.6,
+   "eh2_score": 45,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "polyester": {
+   "ef_kg_co2e_per_kg": 9.0,
+   "eh2_score": 30,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "polyester_recycled": {
+   "ef_kg_co2e_per_kg": 6.0,
+   "eh2_score": 50,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "polyester_felt": {
+   "ef_kg_co2e_per_kg": 4.0,
+   "eh2_score": 40,
+   "recycled_share_market_avg": 0.5,
+   "eol_collected_share": 0.05,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "cotton": {
+   "ef_kg_co2e_per_kg": 12.0,
+   "eh2_score": 20,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.1,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "cotton_organic": {
+   "ef_kg_co2e_per_kg": 9.0,
+   "eh2_score": 45,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.1,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "wool": {
+   "ef_kg_co2e_per_kg": 25.0,
+   "eh2_score": 35,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.1,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "linen": {
+   "ef_kg_co2e_per_kg": 6.0,
+   "eh2_score": 70,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.1,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "jute": {
+   "ef_kg_co2e_per_kg": 2.5,
+   "eh2_score": 70,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.1,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "viscose": {
+   "ef_kg_co2e_per_kg": 8.0,
+   "eh2_score": 30,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "viscose_fsc": {
+   "ef_kg_co2e_per_kg": 7.0,
+   "eh2_score": 55,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "lyocell": {
+   "ef_kg_co2e_per_kg": 6.0,
+   "eh2_score": 60,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "leather": {
+   "ef_kg_co2e_per_kg": 17.0,
+   "eh2_score": 15,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.02,
+   "emitting": true,
+   "risk_flag": "chrome_leather"
+  },
+  "paint_waterborne": {
+   "ef_kg_co2e_per_kg": 2.5,
+   "eh2_score": 45,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.0,
+   "emitting": true,
+   "risk_flag": "isothiazolinone_preservative"
+  },
+  "adhesive_dispersion": {
+   "ef_kg_co2e_per_kg": 2.0,
+   "eh2_score": 45,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.0,
+   "emitting": true,
+   "risk_flag": "isothiazolinone_preservative"
+  },
+  "adhesive_polymer": {
+   "ef_kg_co2e_per_kg": 3.5,
+   "eh2_score": 35,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.0,
+   "emitting": true,
+   "risk_flag": null
+  },
+  "electronics": {
+   "ef_kg_co2e_per_kg": 30.0,
+   "eh2_score": 20,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.4,
+   "emitting": false,
+   "risk_flag": null
+  },
+  "other": {
+   "ef_kg_co2e_per_kg": 4.0,
+   "eh2_score": 35,
+   "recycled_share_market_avg": 0.0,
+   "eol_collected_share": 0.05,
+   "emitting": true,
+   "risk_flag": null
+  }
+ },
+ "countries": {
+  "PL": {
+   "name": "Poland",
+   "zone": "domestic",
+   "epi_ecosystem_vitality": 65.2,
+   "ituc_rating": null
+  },
+  "DE": {
+   "name": "Germany",
+   "zone": "eu",
+   "epi_ecosystem_vitality": 61.89,
+   "ituc_rating": null
+  },
+  "IT": {
+   "name": "Italy",
+   "zone": "eu",
+   "epi_ecosystem_vitality": 52.26,
+   "ituc_rating": null
+  },
+  "ES": {
+   "name": "Spain",
+   "zone": "eu",
+   "epi_ecosystem_vitality": 56.36,
+   "ituc_rating": null
+  },
+  "AT": {
+   "name": "Austria",
+   "zone": "eu",
+   "epi_ecosystem_vitality": 62.1,
+   "ituc_rating": null
+  },
+  "BE": {
+   "name": "Belgium",
+   "zone": "eu",
+   "epi_ecosystem_vitality": 45.72,
+   "ituc_rating": null
+  },
+  "NL": {
+   "name": "Netherlands",
+   "zone": "eu",
+   "epi_ecosystem_vitality": 57.32,
+   "ituc_rating": null
+  },
+  "CZ": {
+   "name": "Czechia",
+   "zone": "eu",
+   "epi_ecosystem_vitality": 57.34,
+   "ituc_rating": null
+  },
+  "PT": {
+   "name": "Portugal",
+   "zone": "eu",
+   "epi_ecosystem_vitality": 46.66,
+   "ituc_rating": null
+  },
+  "LT": {
+   "name": "Lithuania",
+   "zone": "eu",
+   "epi_ecosystem_vitality": 55.11,
+   "ituc_rating": null
+  },
+  "TR": {
+   "name": "Türkiye",
+   "zone": "near",
+   "epi_ecosystem_vitality": 26.67,
+   "ituc_rating": null
+  },
+  "CN": {
+   "name": "China",
+   "zone": "overseas",
+   "epi_ecosystem_vitality": 33.07,
+   "ituc_rating": null
+  },
+  "IN": {
+   "name": "India",
+   "zone": "overseas",
+   "epi_ecosystem_vitality": 22.82,
+   "ituc_rating": null
+  },
+  "VN": {
+   "name": "Viet Nam",
+   "zone": "overseas",
+   "epi_ecosystem_vitality": 22.53,
+   "ituc_rating": null
+  },
+  "UA": {
+   "name": "Ukraine",
+   "zone": "near",
+   "epi_ecosystem_vitality": 52.69,
+   "ituc_rating": null
+  },
+  "BD": {
+   "name": "Bangladesh",
+   "zone": "overseas",
+   "epi_ecosystem_vitality": 21.1,
+   "ituc_rating": null
+  },
+  "PK": {
+   "name": "Pakistan",
+   "zone": "overseas",
+   "epi_ecosystem_vitality": 36.59,
+   "ituc_rating": null
+  },
+  "ID": {
+   "name": "Indonesia",
+   "zone": "overseas",
+   "epi_ecosystem_vitality": 32.31,
+   "ituc_rating": null
+  },
+  "DK": {
+   "name": "Denmark",
+   "zone": "eu",
+   "epi_ecosystem_vitality": 50.73,
+   "ituc_rating": null
+  },
+  "SE": {
+   "name": "Sweden",
+   "zone": "eu",
+   "epi_ecosystem_vitality": 55.54,
+   "ituc_rating": null
+  }
+ },
+ "product_groups": {
+  "Upholstered furniture": {
+   "functional_unit": "item",
+   "mass_per_unit_kg": 50,
+   "service_life_years": 12,
+   "typical_guarantee_years": 2,
+   "default_materials": {
+    "softwood": 0.2,
+    "particleboard": 0.1,
+    "plywood": 0.1,
+    "pu_foam": 0.2,
+    "polyester": 0.15,
+    "steel": 0.2,
+    "polypropylene": 0.05
+   },
+   "questions_na": []
+  },
+  "Storage furniture and tables": {
+   "functional_unit": "item",
+   "mass_per_unit_kg": 35,
+   "service_life_years": 15,
+   "typical_guarantee_years": 2,
+   "default_materials": {
+    "particleboard": 0.75,
+    "mdf": 0.1,
+    "hdf": 0.05,
+    "steel": 0.05,
+    "polypropylene": 0.05
+   },
+   "questions_na": []
+  },
+  "Rugs": {
+   "functional_unit": "m2",
+   "mass_per_unit_kg": 2.0,
+   "service_life_years": 10,
+   "typical_guarantee_years": 2,
+   "default_materials": {
+    "polypropylene": 0.6,
+    "polyester": 0.2,
+    "latex_synthetic": 0.2
+   },
+   "questions_na": [
+    "CE3"
+   ]
+  },
+  "Window treatments": {
+   "functional_unit": "m2",
+   "mass_per_unit_kg": 0.5,
+   "service_life_years": 10,
+   "typical_guarantee_years": 2,
+   "default_materials": {
+    "polyester": 0.8,
+    "steel": 0.1,
+    "polypropylene": 0.1
+   },
+   "questions_na": [
+    "HH1"
+   ]
+  },
+  "Tiles": {
+   "functional_unit": "m2",
+   "mass_per_unit_kg": 20,
+   "service_life_years": 40,
+   "typical_guarantee_years": 2,
+   "default_materials": {
+    "ceramic": 1.0
+   },
+   "questions_na": [
+    "CE3"
+   ]
+  },
+  "Laminate flooring": {
+   "functional_unit": "m2",
+   "mass_per_unit_kg": 7.5,
+   "service_life_years": 20,
+   "typical_guarantee_years": 20,
+   "default_materials": {
+    "hdf": 0.95,
+    "laminate_hpl": 0.05
+   },
+   "questions_na": []
+  },
+  "Vinyl flooring": {
+   "functional_unit": "m2",
+   "mass_per_unit_kg": 9,
+   "service_life_years": 20,
+   "typical_guarantee_years": 20,
+   "default_materials": {
+    "pvc_rigid": 0.3,
+    "mineral_filler": 0.7
+   },
+   "questions_na": []
+  },
+  "Wood flooring": {
+   "functional_unit": "m2",
+   "mass_per_unit_kg": 8.5,
+   "service_life_years": 30,
+   "typical_guarantee_years": 20,
+   "default_materials": {
+    "hardwood_european": 0.3,
+    "softwood": 0.7
+   },
+   "questions_na": []
+  },
+  "Lighting": {
+   "functional_unit": "item",
+   "mass_per_unit_kg": 1.5,
+   "service_life_years": 15,
+   "typical_guarantee_years": 2,
+   "default_materials": {
+    "steel": 0.45,
+    "aluminium": 0.2,
+    "glass": 0.2,
+    "polypropylene": 0.1,
+    "electronics": 0.05
+   },
+   "questions_na": [
+    "HH1",
+    "HH2"
+   ],
+   "default_power_w": 8
+  },
+  "Home textiles": {
+   "functional_unit": "item",
+   "mass_per_unit_kg": 0.6,
+   "service_life_years": 5,
+   "typical_guarantee_years": 2,
+   "default_materials": {
+    "cotton": 0.7,
+    "polyester": 0.3
+   },
+   "questions_na": [
+    "HH1",
+    "CE3"
+   ]
+  },
+  "Decor accessories": {
+   "functional_unit": "item",
+   "mass_per_unit_kg": 3,
+   "service_life_years": 15,
+   "typical_guarantee_years": 2,
+   "default_materials": {
+    "glass": 0.6,
+    "ceramic": 0.2,
+    "mdf": 0.2
+   },
+   "questions_na": [
+    "HH1",
+    "CE3"
+   ]
+  },
+  "Paints and wall coatings": {
+   "functional_unit": "m2",
+   "mass_per_unit_kg": 0.2,
+   "service_life_years": 8,
+   "typical_guarantee_years": 2,
+   "default_materials": {
+    "paint_waterborne": 1.0
+   },
+   "questions_na": [
+    "CE3"
+   ]
+  },
+  "Installation materials": {
+   "functional_unit": "m2",
+   "mass_per_unit_kg": 3.5,
+   "service_life_years": 40,
+   "typical_guarantee_years": 2,
+   "default_materials": {
+    "cement_mortar": 1.0
+   },
+   "questions_na": [
+    "CE3"
+   ],
+   "subtypes": {
+    "tile_adhesive": {},
+    "grout": {
+     "mass_per_unit_kg": 0.4
+    },
+    "primer": {
+     "mass_per_unit_kg": 0.15,
+     "default_materials": {
+      "adhesive_dispersion": 1.0
+     }
+    },
+    "flooring_adhesive": {
+     "mass_per_unit_kg": 1.0,
+     "default_materials": {
+      "adhesive_polymer": 1.0
+     }
+    },
+    "underlay": {
+     "mass_per_unit_kg": 0.3,
+     "default_materials": {
+      "polyethylene": 1.0
+     }
+    }
+   }
+  },
+  "Mattresses and beds": {
+   "functional_unit": "item",
+   "mass_per_unit_kg": 25,
+   "service_life_years": 10,
+   "typical_guarantee_years": 5,
+   "default_materials": {
+    "pu_foam": 0.4,
+    "steel": 0.3,
+    "polyester": 0.2,
+    "cotton": 0.1
+   },
+   "questions_na": []
+  },
+  "Kitchen and bathroom cabinetry": {
+   "functional_unit": "item",
+   "mass_per_unit_kg": 30,
+   "service_life_years": 20,
+   "typical_guarantee_years": 5,
+   "default_materials": {
+    "particleboard": 0.75,
+    "mdf": 0.15,
+    "steel": 0.05,
+    "polypropylene": 0.05
+   },
+   "questions_na": []
+  },
+  "Sanitaryware and taps": {
+   "functional_unit": "item",
+   "mass_per_unit_kg": 2.0,
+   "service_life_years": 15,
+   "typical_guarantee_years": 5,
+   "default_materials": {
+    "brass": 0.8,
+    "zinc_alloy": 0.1,
+    "polypropylene": 0.1
+   },
+   "questions_na": [],
+   "default_water": {
+    "value": 9,
+    "unit": "l/min"
+   },
+   "subtypes": {
+    "tap": {},
+    "wc": {
+     "mass_per_unit_kg": 22,
+     "service_life_years": 30,
+     "typical_guarantee_years": 10,
+     "default_materials": {
+      "sanitary_ceramic": 0.9,
+      "polypropylene": 0.1
+     },
+     "default_water": {
+      "value": 6,
+      "unit": "l/flush"
+     }
+    }
+   }
+  },
+  "Wall panels and acoustic slats": {
+   "functional_unit": "m2",
+   "mass_per_unit_kg": 8,
+   "service_life_years": 20,
+   "typical_guarantee_years": 2,
+   "default_materials": {
+    "mdf": 0.75,
+    "polyester_felt": 0.25
+   },
+   "questions_na": []
+  },
+  "Interior doors": {
+   "functional_unit": "item",
+   "mass_per_unit_kg": 18,
+   "service_life_years": 30,
+   "typical_guarantee_years": 2,
+   "default_materials": {
+    "hdf": 0.35,
+    "mdf": 0.3,
+    "softwood": 0.2,
+    "paper_cardboard": 0.1,
+    "steel": 0.05
+   },
+   "questions_na": []
+  }
+ },
+ "implied_products": [
+  {
+   "for_groups": [
+    "Tiles"
+   ],
+   "name": "Tile adhesive (implied)",
+   "subtype": "tile_adhesive",
+   "kg_per_m2": 3.5,
+   "materials": {
+    "cement_mortar": 1.0
+   }
+  },
+  {
+   "for_groups": [
+    "Tiles"
+   ],
+   "name": "Grout (implied)",
+   "subtype": "grout",
+   "kg_per_m2": 0.4,
+   "materials": {
+    "cement_mortar": 1.0
+   }
+  },
+  {
+   "for_groups": [
+    "Laminate flooring",
+    "Wood flooring"
+   ],
+   "name": "Underlay (implied)",
+   "subtype": "underlay",
+   "kg_per_m2": 0.3,
+   "materials": {
+    "polyethylene": 1.0
+   }
+  }
+ ]
+}
